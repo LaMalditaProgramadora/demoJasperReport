@@ -38,7 +38,7 @@ public class PetController {
     }
 
     @GetMapping("/export-pdf")
-    public ResponseEntity<?> exportPdf() throws JRException, FileNotFoundException {
+    public ResponseEntity<byte[]> exportPdf() throws JRException, FileNotFoundException {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentDispositionFormData("petsReport", "petsReport.pdf");
